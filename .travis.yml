@@ -1,0 +1,11 @@
+service:
+  - docker
+
+global:
+  - CI_BUILD_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+script:
+  - docker build --build-arg CI_BUILD_ID=$TRAVIS_BUILD_ID --build-arg CI_BUILD_REF=$TRAVIS_COMMIT --build-arg CI_BUILD_TIME=$CI_BUILD_TIME -t lucalimardo/$DOCKER_IMAGE:latest $DOCKER_IMAGE
+
+after_success:
+  - docker push lucalimardo/$DOCKER_IMAGE
