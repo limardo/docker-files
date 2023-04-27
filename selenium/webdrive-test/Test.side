@@ -1,0 +1,160 @@
+{
+  "id": "48524c5a-a51d-4095-a480-d9e12efe491d",
+  "version": "2.0",
+  "name": "Test",
+  "url": "https://www.selenium.dev",
+  "tests": [{
+    "id": "79d1aade-6ac8-434b-8061-37cd288682e1",
+    "name": "Test 1",
+    "commands": [{
+      "id": "c33cc1a7-40e2-4a97-a19c-c75bed7b5845",
+      "comment": "",
+      "command": "open",
+      "target": "/selenium/web/web-form.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a59418d-8df0-45b4-b6c7-63f27a49b4fd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1393x1054",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b2c087f-7967-4a6c-90b1-60d35c30bea6",
+      "comment": "",
+      "command": "select",
+      "target": "name=my-select",
+      "targets": [],
+      "value": "label=One"
+    }, {
+      "id": "484a430f-4a73-4373-afb8-b2b297c838e2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-select > option:nth-child(2)",
+      "targets": [
+        ["css=.form-select > option:nth-child(2)", "css:finder"],
+        ["xpath=//option[@value='1']", "xpath:attributes"],
+        ["xpath=//option[2]", "xpath:position"],
+        ["xpath=//option[contains(.,'One')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c6b097d-7b30-4dd6-ad9e-9f306be4b8a2",
+      "comment": "",
+      "command": "click",
+      "target": "name=my-colors",
+      "targets": [
+        ["name=my-colors", "name"],
+        ["css=.form-control-color", "css:finder"],
+        ["xpath=//input[@name='my-colors']", "xpath:attributes"],
+        ["xpath=//form/div/div[3]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "066a4106-d5b5-4510-9d30-fadae3e04c51",
+      "comment": "",
+      "command": "type",
+      "target": "name=my-colors",
+      "targets": [
+        ["name=my-colors", "name"],
+        ["css=.form-control-color", "css:finder"],
+        ["xpath=//input[@name='my-colors']", "xpath:attributes"],
+        ["xpath=//form/div/div[3]/label/input", "xpath:position"]
+      ],
+      "value": "#d03cff"
+    }, {
+      "id": "f4b1b1f3-1de9-42f8-ac0c-83a9ef7f28ae",
+      "comment": "",
+      "command": "click",
+      "target": "name=my-date",
+      "targets": [
+        ["name=my-date", "name"],
+        ["css=.col-md-4:nth-child(3) > .form-label:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='my-date']", "xpath:attributes"],
+        ["xpath=//div[3]/label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3e6e5cb-1093-4c31-9d0f-d9bf580dbd67",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > .day:nth-child(3)",
+      "targets": [
+        ["css=tr:nth-child(2) > .day:nth-child(3)", "css:finder"],
+        ["xpath=//tr[2]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'4')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee903a2f-4efb-48a6-9b37-686a6108596f",
+      "comment": "",
+      "command": "click",
+      "target": "name=my-datalist",
+      "targets": [
+        ["name=my-datalist", "name"],
+        ["css=.col-md-4:nth-child(2) > .form-label:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='my-datalist']", "xpath:attributes"],
+        ["xpath=//div[2]/label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "757b094f-c1df-4335-bb9a-86bbb1a7e2d7",
+      "comment": "",
+      "command": "click",
+      "target": "name=my-password",
+      "targets": [
+        ["name=my-password", "name"],
+        ["css=.col-md-4:nth-child(1) > .form-label:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='my-password']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75b0e455-2df5-4470-9d67-be61ccf5ceb0",
+      "comment": "",
+      "command": "type",
+      "target": "name=my-password",
+      "targets": [
+        ["name=my-password", "name"],
+        ["css=.col-md-4:nth-child(1) > .form-label:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='my-password']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": "jUEKC8v4C9B5Qy2"
+    }, {
+      "id": "fff09555-071b-4970-bc99-be42a2296c5f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-check:nth-child(6) > .form-check-label",
+      "targets": [
+        ["css=.form-check:nth-child(6) > .form-check-label", "css:finder"],
+        ["xpath=//div[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Default radio')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c20dee8-4be5-4392-84c7-5cabac7cb71a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "59d264c7-c5d0-4454-8f8e-2ca052df4215",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["79d1aade-6ac8-434b-8061-37cd288682e1"]
+  }],
+  "urls": ["https://www.selenium.dev/"],
+  "plugins": []
+}

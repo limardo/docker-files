@@ -1,5 +1,6 @@
-# Gitlab CE compose
-# Gitlab CE Docker compose
+# Gitlab CE
+
+## How to use
 
 Initialize runner
 

@@ -1,0 +1,23 @@
+{
+  "name": "webdrive-test",
+  "version": "1.0.0",
+  "scripts": {
+    "ide:chrome": "selenium-side-runner --server http://localhost:4444/wd/hub -c \"browserName=chrome\" ./Test.side",
+    "ide:firefox": "selenium-side-runner --server http://localhost:4444/wd/hub -c \"browserName=firefox\" ./Test.side",
+    "ide:edge": "selenium-side-runner --server http://localhost:4444/wd/hub -c \"browserName=edge\" ./Test.side",
+    "ide": "run-p ide:*",
+    "test:chrome": "SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub SELENIUM_BROWSER=chrome mocha test.spec.js",
+    "test:firefox": "SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub SELENIUM_BROWSER=firefox mocha test.spec.js",
+    "test:edge": "SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub SELENIUM_BROWSER=edge mocha test.spec.js",
+    "test": "run-p test:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5",
+    "selenium-side-runner": "^4.0.0-alpha.46",
+    "selenium-webdriver": "^4.9.0"
+  }
+}

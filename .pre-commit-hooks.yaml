@@ -1,0 +1,9 @@
+---
+# For use with pre-commit.
+# See usage instructions at http://pre-commit.com
+
+- id: yamllint
+  entry: yamllint --strict
+  files: \.(yaml|yml)$
+  language: python
+  types: [file, yaml]

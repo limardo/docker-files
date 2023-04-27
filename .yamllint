@@ -1,0 +1,12 @@
+---
+
+extends: default
+
+ignore-from-file: .gitignore
+
+rules:
+  document-start: disable
+  brackets: disable
+  line-length:
+    max: 300
+    level: warning

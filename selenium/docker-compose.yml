@@ -1,0 +1,87 @@
+version: '3.9'
+services:
+  event-bus:
+    image: selenium/event-bus:4.9.0-20230421
+    ports:
+      - 4442:4442
+      - 4443:4443
+      - 5557:5557
+
+  sessions:
+    image: selenium/sessions:4.9.0-20230421
+    ports:
+      - 5556:5556
+    depends_on:
+      - event-bus
+    environment:
+      SE_EVENT_BUS_HOST: event-bus
+      SE_EVENT_BUS_PUBLISH_PORT: 4442
+      SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+
+  session-queue:
+    image: selenium/session-queue:4.9.0-20230421
+    ports:
+      - 5559:5559
+
+  distributor:
+    image: selenium/distributor:4.9.0-20230421
+    ports:
+      - 5553:5553
+    depends_on:
+      - event-bus
+      - sessions
+      - session-queue
+    environment:
+      SE_EVENT_BUS_HOST: event-bus
+      SE_EVENT_BUS_PUBLISH_PORT: 4442
+      SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+      SE_SESSIONS_MAP_HOST: sessions
+      SE_SESSIONS_MAP_PORT: 5556
+      SE_SESSION_QUEUE_HOST: session-queue
+      SE_SESSION_QUEUE_PORT: 5559
+
+  router:
+    image: selenium/router:4.9.0-20230421
+    ports:
+      - 4444:4444
+    depends_on:
+      - distributor
+      - sessions
+      - session-queue
+    environment:
+      SE_DISTRIBUTOR_HOST: distributor
+      SE_DISTRIBUTOR_PORT: 5553
+      SE_SESSIONS_MAP_HOST: sessions
+      SE_SESSIONS_MAP_PORT: 5556
+      SE_SESSION_QUEUE_HOST: session-queue
+      SE_SESSION_QUEUE_PORT: 5559
+
+  firefox:
+    image: selenium/node-firefox:4.9.0-20230421
+    shm_size: 2gb
+    environment:
+      SE_EVENT_BUS_HOST: event-bus
+      SE_EVENT_BUS_PUBLISH_PORT: 4442
+      SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+    depends_on:
+      - event-bus
+
+  chrome:
+    image: selenium/node-chrome:4.9.0-20230421
+    shm_size: 2gb
+    environment:
+      SE_EVENT_BUS_HOST: event-bus
+      SE_EVENT_BUS_PUBLISH_PORT: 4442
+      SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+    depends_on:
+      - event-bus
+
+  edge:
+    image: selenium/node-edge:4.9.0-20230421
+    shm_size: 2gb
+    environment:
+      SE_EVENT_BUS_HOST: event-bus
+      SE_EVENT_BUS_PUBLISH_PORT: 4442
+      SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+    depends_on:
+      - event-bus

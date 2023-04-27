@@ -1,0 +1,22 @@
+version: '2'
+services:
+
+  db:
+    image: mariadb:5
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: app
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel
+
+  app:
+    depends_on:
+      - db
+    build: .
+    command: php artisan serve --host 0.0.0.0 --port 8000
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./app:/var/www/app
