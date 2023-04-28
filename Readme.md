@@ -12,5 +12,6 @@ Follow `README.md` files in each directories
 * [elastic-stack](elastic-stack)
 * [gitlab-ce](gitlab-ce)
 * [laravel](laravel)
+* [rails](rails)
 * [selenium](selenium)
 * [thinkjs](thinkjs)
